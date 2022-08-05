@@ -1,4 +1,5 @@
 import React from "react";
+import CardWidget from "./CardWidget";
 
 function NavBar() {
   return (
@@ -53,7 +54,7 @@ function NavBar() {
               </li>
               <li class="nav-item menu">
                 <a class="nav-link" href="#">
-                  Deportes
+                  <CardWidget />
                 </a>
               </li>
             </ul>
