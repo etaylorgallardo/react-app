@@ -1,12 +1,13 @@
 import React from "react";
 import CardWidget from "./CardWidget";
+import { NavLink } from 'react-router-dom'
 
 function NavBar() {
   return (
     <div className="nav-bar">
       <nav class="navbar navbar-expand-lg bg-primary">
         <div class="container-fluid">
-          <a class="navbar-brand logo" href="index.html">
+          <NavLink class="navbar-brand logo" href="index.html">
             <img
               src="img/reebok.png"
               class="logo"
@@ -14,7 +15,7 @@ function NavBar() {
               alt="Logotipo de la marca"
               height="85px"
             />
-          </a>
+          </NavLink>
           <button
             class="navbar-toggler"
             type="button"
@@ -29,33 +30,33 @@ function NavBar() {
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
               <li class="nav-item menu">
-                <a
+                <NavLink 
                   class="nav-link active"
                   aria-current="page"
-                  href="index.html"
+                  to={'/'}
                 >
                   Reebok
-                </a>
+                </NavLink>
               </li>
               <li class="nav-item menu">
-                <a class="nav-link" href="#">
+                <NavLink class="nav-link" to={'/categoria'}>
                   Zapatillas
-                </a>
+                </NavLink>
               </li>
               <li class="nav-item menu">
-                <a class="nav-link" href="#">
+                <NavLink class="nav-link" to={'/categoria'}>
                   Poleras
-                </a>
+                </NavLink>
               </li>
               <li class="nav-item menu">
-                <a class="nav-link" href="#">
+                <NavLink class="nav-link" to={'/categoria'}>
                   Short
-                </a>
+                </NavLink>
               </li>
               <li class="nav-item menu">
-                <a class="nav-link" href="#">
+                <NavLink class="nav-link" to={'/cart'}>
                   <CardWidget />
-                </a>
+                </NavLink>
               </li>
             </ul>
           </div>
