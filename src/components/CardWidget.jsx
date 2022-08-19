@@ -2,7 +2,7 @@ import React from "react";
 
 export const CardWidget = () => {
     return (
-        <i class="bi bi-cart3"></i>
+        <i className="bi bi-cart3"></i>
     );
 }
 
