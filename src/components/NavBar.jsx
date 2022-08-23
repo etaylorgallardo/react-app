@@ -33,7 +33,7 @@ function NavBar() {
                 <NavLink 
                   className="nav-link active"
                   aria-current="page"
-                  to='/categoria/rebook'
+                  to='/'
                 >
                   Reebok
                 </NavLink>

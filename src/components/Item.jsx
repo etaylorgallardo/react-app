@@ -7,7 +7,7 @@ const item = ({ info } ) => {
    
 
     return (
-        <Link to={'/detalle/${info.id}'} className="articulos">
+        <Link to={`/detalle/${info.id}`} className="articulos">
             <img src={info.foto} alt="" />
             <p>{info.nombre}</p>
             <p>{info.precio}</p>

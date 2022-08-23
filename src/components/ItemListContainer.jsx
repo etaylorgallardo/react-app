@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import Title from "./Title";
-//import ItemCount from "./ItemCount";
+
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 
@@ -12,7 +12,7 @@ const articulos = [
     {id: 3, nombre: "polerones", precio: 25000, foto: "/img/polerones.jpg"},
     {id: 4, nombre: "pelotas", precio: 18000, foto: "/img/pelotas.jpg"},
 
-]
+];
 
 export const ItemListContainer = (props) => {
     const [data, setData] = useState([]);
@@ -35,9 +35,7 @@ export const ItemListContainer = (props) => {
         
     }, [id])
 
-    const onAdd = (quantity) => {
-        console.log('Agregaste ${quantity} unidades');
-    }
+    
     return (
         <div>
         <Title greeting={props.texto} />

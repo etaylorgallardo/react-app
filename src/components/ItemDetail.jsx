@@ -9,6 +9,7 @@ export const ItemDetail = ({ data }) => {
 
     const onAdd = (quantity) => {
         setIrAlCarro(true);
+    }
 
     return (
         <div className="container">
@@ -18,7 +19,7 @@ export const ItemDetail = ({ data }) => {
                 <h1>{data.nombre}</h1>
                 {
                     irAlCarro
-                    ? <Link to='/cart'> Finalizar Compra</Link>
+                    ? <Link to={'/cart'}> Finalizar Compra</Link>
                     : <ItemCount initial={1} stock={20} onAdd={onAdd} />
                 }
                 
@@ -27,6 +28,6 @@ export const ItemDetail = ({ data }) => {
     </div>
     );
 }
-}
+
 
 export default ItemDetail;

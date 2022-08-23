@@ -8,7 +8,7 @@ const articulos = [
     {id: 3, nombre: "polerones", precio: 25000, foto: "/img/polerones.jpg"},
     {id: 4, nombre: "pelotas", precio: 18000, foto: "/img/pelotas.jpg"},
 
-]
+];
 
 
 export const ItemDetailContainer = () => {
@@ -25,9 +25,9 @@ export const ItemDetailContainer = () => {
             }, 1000);
         });
 
-        getData.then(res => setData(res.find(articulos => articulos.id === parseInt(detalleId))))
+        getData.then(res => setData(res.find(articulos => articulos.id === parseInt(detalleId))));
 
-        getData.then(res => setData(res));
+        
     }, [])
 
     return (
