@@ -1,12 +1,11 @@
-import React, {useContext} from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { CartContext } from "../App";
+
 
 
 
 const Item = ({ info } ) => {
-   const nombre = useContext(CartContext);
-   console.log(nombre);
+  
 
     return (
         <Link to={`/detalle/${info.id}`} className="articulos">

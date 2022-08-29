@@ -1,11 +1,16 @@
 import React from "react";
-
+import { useContext } from "react";
+import { CartContext } from "../CartContext";
 
 
 export const CardWidget = () => {
-    
+    const { totalProducts } = useContext(CartContext);
     return (
-        <i className="bi bi-cart3"></i>
+        <div>
+            <i className="bi bi-cart3"></i>
+            <span>{totalProducts() || ''}</span>
+        </div>
+        
     );
 }
 

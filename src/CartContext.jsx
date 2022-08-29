@@ -1,23 +1,29 @@
-import React, {useContext, useState} from "react";
+import React, {useState} from "react";
 
-const CartContext = React.createContext([]);
 
-export const useCartContext = () => useContext(CartContext);
+export const CartContext = React.createContext([]);
+
 
 const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
 
-    const addProduct = (Item, newQuantity) => {
-        const newCart = cart.filter(prod => prod.id !== Item.id);
-        newCart.push({ ...Item, quiantity: newQuantity});
+    const addProduct = (item, newQuantity) => {
+        const newCart = cart.filter(prod => prod.id !== item.id);
+        newCart.push({ ...item, quantity: newQuantity});
         setCart(newCart);
     }
 
-    //console.log('Carrito: ', cart);
+    console.log('Carrito: ', cart);
+
+    const totalPrice = () => {
+        return cart.reduce((prev, act) => prev + act.quantity * act.precio, 0);
+    }
+
+    const totalProducts = () => cart.reduce((acumulador, productoActual) => acumulador + productoActual.quantity, 0);
 
     const clearCart = () => setCart([]);
 
-    const isCart = (id) => cart.find(product => product.id === id) ? true : false;
+    const isInCart = (id) => cart.find(product => product.id === id) ? true : false;
 
     const removeProduct = (id) => setCart(cart.filter(product => product.id !== id))
 
@@ -27,12 +33,14 @@ const CartProvider = ({ children }) => {
     return (
         <CartContext.Provider value={{
             clearCart,
-            isCart,
-            removeProduct
+            isInCart,
+            removeProduct,
+            addProduct,
+            totalPrice, totalProducts, cart
         }}>
             {children}
         </CartContext.Provider>
     )
 }
 
-export default CartContext
+export default CartProvider;
