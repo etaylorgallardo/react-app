@@ -20,11 +20,11 @@ export const ItemListContainer = (props) => {
         if(categoriaId) {
             const queryFilter = query(queryCollection, where('categoria', '==', categoriaId))
             getDocs(queryFilter)
-                .then(res => setData(res.docs.map(articulos => ({id: articulos.id, ...articulos.data}))))
+                .then(res => setData(res.docs.map(articulos => ({id: articulos.id, ...articulos.data()}))))
             
         }else {
             getDocs(queryCollection)
-                .then(res => setData(res.docs.map(articulos => ({id: articulos.id, ...articulos.data}))))
+                .then(res => setData(res.docs.map(articulos => ({id: articulos.id, ...articulos.data()}))))
         }
         
     }, [categoriaId])

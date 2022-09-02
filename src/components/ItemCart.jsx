@@ -2,6 +2,7 @@ import React, {useContext} from "react";
 import { CartContext } from "../CartContext";
 
 
+
 const ItemCart = ({ product }) => {
     const { removeProduct } = useContext(CartContext);
     return (
@@ -14,6 +15,8 @@ const ItemCart = ({ product }) => {
                 <p>Subtotal: ${product.quantity * product.precio} </p>
                 <button onClick={() => removeProduct(product.id)}>Eliminar</button>
             </div>
+
+            
 
 
         </div>

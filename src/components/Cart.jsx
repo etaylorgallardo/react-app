@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../CartContext";
 import ItemCart from "./ItemCart";
+import UserForm from "./userForm";
 
 export const Cart = () => {
     const { cart, totalPrice } = useContext(CartContext);
@@ -26,6 +27,7 @@ export const Cart = () => {
             <p>
                 Total: {totalPrice()}
             </p>
+            <UserForm cart={cart} />
         </div>
         
     );
