@@ -1,13 +1,14 @@
 import React from "react";
 import CardWidget from "./CardWidget";
-import { NavLink } from 'react-router-dom'
+import { NavLink } from "react-router-dom";
+import './NavBar.css'
 
 function NavBar() {
   return (
     <div className="nav-bar">
       <nav className="navbar navbar-expand-lg bg-primary">
         <div className="container-fluid">
-          <NavLink className="navbar-brand logo" to="/">
+          <NavLink className="navbar-brand logo" to="/" id="logo">
             <img
               src="img/reebok.png"
               className="logo"
@@ -30,31 +31,27 @@ function NavBar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
               <li className="nav-item menu">
-                <NavLink 
-                  className="nav-link active"
-                  aria-current="page"
-                  to='/'
-                >
-                  Reebok
+                <NavLink className="nav-link active" aria-current="page" to="/categoria/polerones">
+                  Polerones
                 </NavLink>
               </li>
               <li className="nav-item menu">
-                <NavLink className="nav-link" to='/categoria/zapatillas'>
+                <NavLink className="nav-link" to="/categoria/zapatillas">
                   Zapatillas
                 </NavLink>
               </li>
               <li className="nav-item menu">
-                <NavLink className="nav-link" to='/categoria/poleras'>
+                <NavLink className="nav-link" to="/categoria/poleras">
                   Poleras
                 </NavLink>
               </li>
               <li className="nav-item menu">
-                <NavLink className="nav-link" to='/categoria/pelotas'>
+                <NavLink className="nav-link" to="/categoria/pelotas">
                   Pelotas
                 </NavLink>
               </li>
               <li className="nav-item menu">
-                <NavLink className="nav-link" to='/cart'>
+                <NavLink className="nav-link" to="/cart">
                   <CardWidget />
                 </NavLink>
               </li>

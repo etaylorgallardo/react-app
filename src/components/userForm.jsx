@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
-
+import './userForm.css'
 
 function UserForm({ cart }) {
   const [userData, setUserData] = useState({
@@ -9,19 +9,15 @@ function UserForm({ cart }) {
     telefono: "",
   });
 
-  
   const [orderFirebase, setOrderFirebase] = useState({
-    id: '',
+    id: "",
     complete: false,
   });
-
-  
 
   let total = 0;
   cart.forEach((item) => {
     total += item.precio * item.quantity;
   });
-  
 
   const ordenDeCompra = {
     buyer: { ...userData },
@@ -31,13 +27,12 @@ function UserForm({ cart }) {
   };
 
   async function handleSubmit(evt) {
-    evt.preventDefault();    
+    evt.preventDefault();
 
     const querydb = getFirestore();
     const collectionRef = collection(querydb, "ordenes");
-    const order = await addDoc(collectionRef, ordenDeCompra);    
-    setOrderFirebase({id: order.id, complete: true});
-  
+    const order = await addDoc(collectionRef, ordenDeCompra);
+    setOrderFirebase({ id: order.id, complete: true });
   }
 
   function inputChangeHandler(evt) {
@@ -112,7 +107,7 @@ function UserForm({ cart }) {
           <button type="submit" onTouch={handleSubmit}>
             Finalizar Compra
           </button>
-          <button type="reset">Vaciar Carrito</button>
+          <button type="reset" onTouch={handleReset}>Vaciar Formulario</button>
         </div>
       </form>
     </div>

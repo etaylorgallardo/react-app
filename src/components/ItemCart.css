@@ -1,0 +1,22 @@
+.itemCart img {
+    width: 200px;
+    height: 200px;
+}
+
+.itemCart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: yellow;
+
+}
+
+.itemCart p {
+    margin: 20px
+}
+
+.itemCart button {
+    margin: 20px;
+    background-color: red;
+    
+}
